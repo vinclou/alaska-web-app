@@ -1,5 +1,9 @@
 alaska-web-app
 
+## Install All dependencies:
+
+### npm install
+
 ## Available Scripts
 
 In the project directory, you can run:
