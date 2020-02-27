@@ -4,7 +4,7 @@ alaska-web-app
 
 In the project directory, you can run:
 
-### `npm server`
+### `npm run server`
 
 Runs the backend part of the app in  development mode.<br />
 Open [http://localhost:5000](http://localhost:5000) to view it in the browser.
@@ -12,14 +12,14 @@ Open [http://localhost:5000](http://localhost:5000) to view it in the browser.
 The console will reload if you make edits.<br />
 You will also see any lint errors in the console.
 
-### `npm client`
+### `npm run client`
 
 Launches the client server(React) in the interactive watch mode.<br />
 
 The page will reload if you make edits.<br />
 You will also see any lint errors in the console.
 
-### `npm dev`
+### `npm run dev`
 
 Launches the development server React + NodeJS at the same time. 
 
