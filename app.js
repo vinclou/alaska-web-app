@@ -21,7 +21,7 @@ async function start() {
             useCreateIndex: true   
         });
         app.listen( PORT, () => console.log(`App has been started at port ${PORT}`) );
-
+    //if you catch an error check your connection with Mongo, and see why it failed
     } catch (e) {
         console.log('Server Error', e.message);
         process.exit(1);
