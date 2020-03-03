@@ -4,7 +4,7 @@ const User = require('../models/User');
 const bcrypt = require('bcryptjs');
 const {check, validationResult} = require('express-validator'); 
 const jwt = require('jsonwebtoken');
-//54.27
+const config   = require('config');
 
 // /api/auth/register 
 router.post(
@@ -15,6 +15,7 @@ router.post(
     ],
     async( req, res ) => {
     try {
+        //console.log('Body:', req.body);
         const errors = validationResult(req);
         //check if there are any errors in the
         if( !errors.isEmpty() ) {
@@ -47,7 +48,7 @@ router.post(
 router.post(
     '/login',   
     [
-        check('email', "Incorrect Email").normalizeEmail().isEmail(),
+        check('email', "Enter Correct Email").normalizeEmail().isEmail(),
         check('password', "Enter password").exists()
     ],
     async( req, res ) => {
@@ -83,6 +84,7 @@ router.post(
         res.json({ token, userId: user.id });
 
     } catch (e) {
+        console.log(e.message);
         res.status(500).json( {message: "Something went wrong..."} );
     }
 });
