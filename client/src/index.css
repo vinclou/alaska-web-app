@@ -1,1 +1,6 @@
 @import "~materialize-css/dist/css/materialize.min.css";
+
+body {
+    background-color: #080808; /*141414*/
+    color: white;
+}
