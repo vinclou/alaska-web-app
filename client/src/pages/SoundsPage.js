@@ -1,9 +1,9 @@
 import React from 'react';
 
-export const DetailPage = () => {
+export const SoundsPage = () => {
     return (
         <div>
-            <h1>Detail Page</h1>
+            <h1>Sounds Page</h1>
         </div>
     );
 }

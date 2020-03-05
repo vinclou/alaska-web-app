@@ -3,8 +3,9 @@ import {Switch, Route, Redirect} from 'react-router-dom';
 import {AuthPage}   from './pages/AuthPage';
 import {LinksPage}  from './pages/LinksPage';
 import {CreatePage} from './pages/CreatePage';
-import {DetailPage} from './pages/DetailPage';
-
+import {DashboardPage} from './pages/DashboardPage';
+import {SoundsPage} from './pages/SoundsPage';
+import {ImagesPage} from './pages/ImagesPage';
 
 export const useRoutes = isAuthenticated => {
     //user is in the system cases 
@@ -18,7 +19,13 @@ export const useRoutes = isAuthenticated => {
                     <CreatePage/>
                 </Route>
                 <Route path = "/detail/:id" > {/* Return Dynamic Parameter ID based on user id*/}
-                    <DetailPage/>
+                    <DashboardPage/>
+                </Route>
+                <Route path = "/sounds" exact>
+                    <SoundsPage/>
+                </Route>
+                <Route path = "/images" exact>
+                    <ImagesPage/>
                 </Route>
                 <Redirect to = "/create"/> 
             </Switch>
