@@ -45,7 +45,7 @@ export const AuthPage = () => {
         <div className = "row">
             <div className = "col s6 offset-s3">
                 <div className = "card light-gray darken-4">
-                    <h3>Log in</h3>
+                    <h3 style={{ color:"gray", opacity: 0.9 }}>Log in</h3>
                 </div>            
                 <div className="card blue-grey darken-4">
 
