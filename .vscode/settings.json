@@ -1,0 +1,24 @@
+{
+    "workbench.fontAliasing": "antialiased",
+
+    "workbench.colorCustomizations": {
+        "[Abyss]": {
+            "editor.background": "#04080d",
+
+        },
+        "[Min Dark]": {
+            "editor.background": "#04080d",
+
+        }
+    },
+    "editor.tokenColorCustomizations": {
+        "variables": "#d4fcff",
+        "numbers": "#e60054",
+
+    },
+    "workbench.statusBar.visible": false,
+    "editor.fontFamily": "Hack",
+    "editor.fontSize": 12.7,
+    "workbench.colorTheme": "Abyss",
+
+}

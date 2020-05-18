@@ -8,36 +8,39 @@ import {SoundsPage} from './pages/SoundsPage';
 import {ImagesPage} from './pages/ImagesPage';
 
 export const useRoutes = isAuthenticated => {
-    //user is in the system cases 
+    //user is in the system cases
     if(isAuthenticated) {
+
         return(
             <Switch>
-                <Route path = "/links" exact>
-                    <LinksPage/>
-                </Route>
-                <Route path = "/create" exact>
-                    <CreatePage/>
-                </Route>
-                <Route path = "/detail/:id" > {/* Return Dynamic Parameter ID based on user id*/}
-                    <DashboardPage/>
-                </Route>
-                <Route path = "/sounds" exact>
-                    <SoundsPage/>
-                </Route>
-                <Route path = "/images" exact>
-                    <ImagesPage/>
-                </Route>
-                <Redirect to = "/create"/> 
+                <Route path = "/links" component={LinksPage} exact/>
+
+                <Route path = "/create" component={CreatePage} exact/>
+
+                <Route path = "/dash/:id" component={DashboardPage}/> {/* Return Dynamic Parameter ID based on user id*/}
+
+                <Route path = "/sounds" component={SoundsPage} exact/>
+
+                <Route path = "/images" component={ImagesPage} />
+
+                <Redirect to = "/create"/>
             </Switch>
         );
     }
-    //return these pages if user is not in the system 
+    //return these pages if user is not in the system
     return(
         <Switch>
-            <Route path = "/" exact>
-                <AuthPage/>
-            </Route>
+            <Route path = "/" component={AuthPage} exact/>
+
+            <Route path = "/sounds" component={SoundsPage} exact/>
+
+            <Route path = "/images" component={ImagesPage} />
+
+            <Route path = "/links" component={LinksPage} exact/>
+
+            <Route path = "/create" component={CreatePage} exact/>
+
             <Redirect to = "/" />{/*redirect to the main page*/}
-        </Switch>    
+        </Switch>
     );
 }

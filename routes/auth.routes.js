@@ -2,11 +2,11 @@ const {Router} = require('express');
 const router = Router();
 const User = require('../models/User');
 const bcrypt = require('bcryptjs');
-const {check, validationResult} = require('express-validator'); 
+const {check, validationResult} = require('express-validator');
 const jwt = require('jsonwebtoken');
 const config   = require('config');
 
-// /api/auth/register 
+// /api/auth/register
 router.post(
     '/register',
     [
@@ -31,7 +31,7 @@ router.post(
         if(stranger) {
             return res.status(400).json({message: "Such user already exists"});
         }
-        
+
         const hashedPassword = await bcrypt.hash(password, 12);
         const user = new User({ email, password: hashedPassword });
 
@@ -46,7 +46,7 @@ router.post(
 
 // /api/auth/login
 router.post(
-    '/login',   
+    '/login',
     [
         check('email', "Enter Correct Email").normalizeEmail().isEmail(),
         check('password', "Enter password").exists()
@@ -66,8 +66,8 @@ router.post(
 
         const user = await User.findOne({ email });
 
-        if( !user ) { 
-            return res.status(400).json({ message: "User wasn't found "}); 
+        if( !user ) {
+            return res.status(400).json({ message: "User wasn't found "});
         }
 
         const isPass = await bcrypt.compare(password, user.password)
@@ -78,8 +78,8 @@ router.post(
 
         const token = jwt.sign(
             { userId: user.id },
-            config.get('jwtSecret'),//nobody supposed to know jwtSecret in config 
-            { expiresIn: '1h' }     //work on it later  
+            config.get('jwtSecret'),//nobody supposed to know jwtSecret in config
+            { expiresIn: '1h' }     //work on it later
         );
         res.json({ token, userId: user.id });
 

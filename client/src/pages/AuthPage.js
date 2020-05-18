@@ -14,7 +14,7 @@ export const AuthPage = () => {
         email: '', password: ''
     });
 
-    useEffect( () => {
+useEffect( () => {
         message(error);
         clearError();
     }, [error, message, clearError]);
@@ -46,7 +46,7 @@ export const AuthPage = () => {
             <div className = "col s6 offset-s3">
                 <div className = "card light-gray darken-4">
                     <h3 style={{ color:"gray", opacity: 0.9 }}>Log in</h3>
-                </div>            
+                </div>
                 <div className="card blue-grey darken-4">
 
                     <div className="card-content white-text">
@@ -55,9 +55,9 @@ export const AuthPage = () => {
                         <div>
                             <div className="input-field" >
                                 {/*Add text color in the input fields later to one css file*/}
-                                <input placeholder="Enter Email" 
-                                       id="email" 
-                                       type="text" 
+                                <input placeholder="Enter Email"
+                                       id="email"
+                                       type="text"
                                        name="email"
                                        onChange = {changeHandler}
                                        style = {{color: "white"}}/>
@@ -66,11 +66,11 @@ export const AuthPage = () => {
                             {/*Password*/}
                             <div className="input-field">
                                 {/*Add text color in the input fields later to one css file*/}
-                                <input placeholder="Enter Password" 
-                                       id="password" 
+                                <input placeholder="Enter Password"
+                                       id="password"
                                        type="password"
                                        name="password"
-                                       onChange = {changeHandler} 
+                                       onChange = {changeHandler}
                                        style = {{color: "white"}}/>
                                 <label htmlFor="password">Password</label>
                             </div>
@@ -78,7 +78,7 @@ export const AuthPage = () => {
                     </div>
                     {/*Buttons*/}
                     <div className="card-action">{/*Add seperate css styles later! Leave it inline for now*/}
-                        <button className = "btn teal darken-1 accent-4" 
+                        <button className = "btn teal darken-1 accent-4"
                                 disabled = {loading}
                                 onClick = {loginHandler}
                                 style   = {{marginRight: 10}}
@@ -88,13 +88,13 @@ export const AuthPage = () => {
 
                         <button className = "btn teal lighten-5 black-text"
                                 onClick = {registerHandler}
-                                disabled = {loading}    
+                                disabled = {loading}
                         >
                             Register
                         </button>
                     </div>
 
-                </div>           
+                </div>
             </div>
         </div>
     );
