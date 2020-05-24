@@ -10,7 +10,9 @@
     "dev": "concurrently \"npm run server\" \"npm run client\""
   },
   "nodemonConfig": {
-    "ignore": ["docs/*"],
+    "ignore": [
+      "docs/*"
+    ],
     "delay": "1500"
   },
   "repository": {
@@ -44,8 +46,10 @@
     "express": "^4.17.1",
     "express-validator": "^6.4.0",
     "jsonwebtoken": "^8.5.1",
+    "markdown-to-jsx": "^6.11.4",
     "mongoose": "^5.9.2",
     "react-animated-tree": "^1.0.10",
+    "react-map-gl": "^5.2.5",
     "recharts": "^1.8.5",
     "walk": "^2.3.14"
   }
