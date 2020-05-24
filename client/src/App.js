@@ -6,14 +6,14 @@ import { useRoutes } from './routes';
 import { useAuth } from './hooks/auth.hook';
 import { AuthContext } from './context/AuthContext';
 import { Navbar } from './components/Navbar';
-import { DashboardPage} from './pages/DashboardPage';
+
 import { makeStyles } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
 
+import { ThemeProvider, createMuiTheme } from '@material-ui/core';
+
+
 const useStyles = makeStyles((theme) => ({
-  mainGrid: {
-    marginTop: theme.spacing(3),
-  },
   root: {
     display: 'flex',
     height: "100%",
@@ -29,9 +29,25 @@ function App() {
   const routes = useRoutes(isAuthenticated);
   const classes = useStyles();
 
+  const theme = createMuiTheme({
+    palette: {
+      type: "dark",
+      primary: {
+        main: '#42b266',
+
+      },
+      secondary: {
+        main: '#689f38',
+
+      },
+    },
+  });
+
   return(
-    <div className={classes.root} >
+    <ThemeProvider theme={theme}>
       <CssBaseline />
+    <div className={classes.root} >
+
     <AuthContext.Provider value = {{token, login, logout, userId, isAuthenticated}}>
 
       <React.Fragment>
@@ -51,6 +67,8 @@ function App() {
     </AuthContext.Provider>
 
     </div>
+
+    </ThemeProvider>
   );
 
 }

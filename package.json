@@ -5,9 +5,13 @@
   "main": "app.js",
   "scripts": {
     "start": "node app.js",
-    "server": "nodemon app.js",
+    "server": "nodemon app.js --ignore",
     "client": "npm run start --prefix client",
     "dev": "concurrently \"npm run server\" \"npm run client\""
+  },
+  "nodemonConfig": {
+    "ignore": ["docs/*"],
+    "delay": "1500"
   },
   "repository": {
     "type": "git",
@@ -42,6 +46,7 @@
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.9.2",
     "react-animated-tree": "^1.0.10",
-    "recharts": "^1.8.5"
+    "recharts": "^1.8.5",
+    "walk": "^2.3.14"
   }
 }
