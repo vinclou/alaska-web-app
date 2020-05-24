@@ -4,7 +4,7 @@ const mongoose = require('mongoose');
 const walk = require('walk');
 const fs = require('fs');
 const path = require('path');
-const utils = require('./utils.js');
+const utils = require('./middleware/utils.middleware.js');
 const imageContent = require('./docs/img_test.json');
 
 const app = express();
@@ -13,12 +13,12 @@ app.use(express.json({ extended: true }));
 
 app.use('/api/auth', require('./routes/auth.routes'));
 
-app.use('/api/images', require('./routes/image.routes'));
+app.use('/images', require('./routes/image.routes'));
 
-//const imgFolderPath = path.join(__dirname, 'cameraTrap');
-//const audFolderPath = path.join(__dirname, 'real');
-/*
-let options = {
+const imgFolderPath = path.join(__dirname, 'cameraTrap');
+const audFolderPath = path.join(__dirname, 'real');
+
+const options = {
     dotfiles: "ignore", //allow, deny, ignore
     etag: true,
     extensions: ["flac", "jpg"],//adds these extensions if extension is not provided
@@ -31,9 +31,9 @@ let options = {
     }
 };
 
-  app.use(express.static(imgFolderPath, options));
-  app.use(express.static(audFolderPath, options));
-*/
+app.use("/images", express.static(imgFolderPath, options));
+app.use("/audio" , express.static(audFolderPath, options));
+
 /* Gettin Images and Audio
 app.get("/", (req, res) => {
     let img = `<img src="/anwr/31/2019/100RECNX/20190601_000000.jpg"/>`;

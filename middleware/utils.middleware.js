@@ -61,7 +61,6 @@ class FsTree {
     }
 }
 
-
 const saveAsJson = (jsonObj) => {
     const json_file = JSON.stringify(jsonObj);
     fs.writeFileSync('./docs/img_test.json', json_file);
