@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import ReactMapGL, { Marker, Popup } from "react-map-gl";
 import * as posData from "./data/position.json";
 import { Footer } from "../components/Footer";
+import { Card } from "@material-ui/core";
+import './CreatePage.css';
 
 export function CreatePage() {
 const [viewport, setViewport] = useState({
@@ -41,6 +43,7 @@ const [viewport, setViewport] = useState({
             key={pos.properties.Pos_ID}
             latitude={pos.geometry.coordinates[0]}
             longitude={pos.geometry.coordinates[1]}
+            id="marker"
           >
             <button
               className="marker-btn"
@@ -49,7 +52,7 @@ const [viewport, setViewport] = useState({
                 setSelectedPos(pos);
               }}
             >
-              <img style={{width: "50px"}}  src="https://is2-ssl.mzstatic.com/image/thumb/Purple20/v4/96/b5/14/96b5147f-1b36-9b01-6c77-ec6e91a98b83/source/256x256bb.jpg" alt="Picture" />
+              <img style={{width: "45px"}}  src="https://is2-ssl.mzstatic.com/image/thumb/Purple20/v4/96/b5/14/96b5147f-1b36-9b01-6c77-ec6e91a98b83/source/256x256bb.jpg" alt="Picture" />
             </button>
           </Marker>
         ))}
@@ -62,12 +65,13 @@ const [viewport, setViewport] = useState({
               setSelectedPos(null);
             }}
           >
-            <div>
-              <h2>{selectedPos.properties.NAME}</h2>
+
+              <p id="text">{selectedPos.properties.NAME}</p>
              {/* <p>{selectedPos.properties.DESCRIPTIO}</p> */}
-            </div>
+
           </Popup>
         ) : null}
+
       </ReactMapGL>
       <Footer/>
     </div>

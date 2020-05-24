@@ -8,6 +8,7 @@ import ImageIcon from '@material-ui/icons/Image';
 import WavesIcon from '@material-ui/icons/Waves';
 import InfoIcon from '@material-ui/icons/Info';
 import LinkIcon from '@material-ui/icons/Link';
+import ExploreIcon from '@material-ui/icons/Explore';
 import AssignmentIcon from '@material-ui/icons/Assignment';
 import {NavLink} from 'react-router-dom';
 
@@ -41,12 +42,12 @@ export const mainListItems = (
     </ListItem>
 
     <ListItem button
-              key="create"
+              key="map"
               component= {NavLink} to="/create">
       <ListItemIcon>
-        <InfoIcon />
+        <ExploreIcon />
       </ListItemIcon>
-      <ListItemText primary="About" />
+      <ListItemText primary="Map" />
     </ListItem>
 
     <ListItem button

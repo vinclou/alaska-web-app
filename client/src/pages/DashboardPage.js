@@ -43,8 +43,9 @@ export const useStyles = makeStyles((theme) => ({
     paper: {
       padding: theme.spacing(2),
       display: 'flex',
-      overflow: 'auto',
+      overflow: 'hidden',
       flexDirection: 'column',
+      height: 340,
     },
     fixedHeight: {
       height: 240,
@@ -66,25 +67,25 @@ export const DashboardPage = () => {
           <Grid container spacing={3}>
             {/* Chart */}
             <Grid item xs={12} md={8} lg={9}>
-              <Paper className={fixedHeightPaper}>
+              <Paper className={fixedHeightPaper} elevation={23}>
                 <Chart />
               </Paper>
             </Grid>
             {/* Recent Messages */}
             <Grid item xs={12} md={4} lg={3}>
-              <Paper className={fixedHeightPaper}>
+              <Paper className={fixedHeightPaper} elevation={23}>
                 <Messages />
               </Paper>
             </Grid>
             {/* Recent Uploads */}
             <Grid item xs={12}>
-              <Paper className={classes.paper}>
+              <Paper className={classes.paper} elevation={23}>
                 <Uploads />
               </Paper>
             </Grid>
             {/*File Explorer*/}
             <Grid item xs={12}>
-              <Paper className={classes.paper}>
+              <Paper className={classes.paper} elevation={23}>
                 <FileExplorer />
               </Paper>
             </Grid>
