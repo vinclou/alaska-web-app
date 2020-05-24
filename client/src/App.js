@@ -16,7 +16,7 @@ import { ThemeProvider, createMuiTheme } from '@material-ui/core';
 const useStyles = makeStyles((theme) => ({
   root: {
     display: 'flex',
-    height: "100%",
+
   },
   appBarSpacer: theme.mixins.toolbar,
 }));

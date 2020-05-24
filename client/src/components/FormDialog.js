@@ -5,9 +5,27 @@ import DialogActions from "@material-ui/core/DialogActions";
 import DialogContent from "@material-ui/core/DialogContent";
 import DialogTitle from "@material-ui/core/DialogTitle";
 import UserForm from "./UserForm";
+import { makeStyles } from '@material-ui/core/styles';
+import {Card, Container } from '@material-ui/core';
+import { CssBaseline } from "@material-ui/core";
 
+
+const useStyles = makeStyles((theme) => ({
+
+  contact: {
+    display: 'flex',
+    float: 'left',
+    flexDirection: 'column',
+  },
+  btn: {
+    marginTop: 20,
+  }
+
+}));
 
 export default function FormDialog() {
+  const classes = useStyles();
+
   const [open, setOpen] = React.useState(false);
 
   function handleClickOpen() {
@@ -19,8 +37,9 @@ export default function FormDialog() {
   }
 
   return (
-    <div >
-      <Button style={{marginLeft: '45vw'}} variant="outlined" color="primary" onClick={handleClickOpen}>
+    <React.Fragment>
+
+      <Button className="btn" variant="outlined" color="primary" onClick={handleClickOpen}>
         Contact
       </Button>
       <Dialog
@@ -38,6 +57,7 @@ export default function FormDialog() {
           </Button>
         </DialogActions>
       </Dialog>
-    </div>
+
+    </React.Fragment>
   );
 }

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import ReactMapGL, { Marker, Popup } from "react-map-gl";
 import * as posData from "./data/position.json";
+import { Footer } from "../components/Footer";
 
 export function CreatePage() {
 const [viewport, setViewport] = useState({
@@ -68,6 +69,7 @@ const [viewport, setViewport] = useState({
           </Popup>
         ) : null}
       </ReactMapGL>
+      <Footer/>
     </div>
   );
 }
